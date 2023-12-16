@@ -13,8 +13,11 @@
 #include <iomanip>
 #include <fstream>
 #include <iomanip>
-using namespace std;
-
+using std::dynamic_pointer_cast, std::cout, std::endl;
+using std::ifstream, std::map, std::pair;
+using std::regex, std::stringstream, std::regex_match;
+using std::string, std::vector, std::shared_ptr, std::make_shared;
+using std::to_string;
 class ParserFactory;
 
 class IShapes;

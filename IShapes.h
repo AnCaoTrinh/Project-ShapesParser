@@ -1,6 +1,7 @@
 #pragma once
 #include "main.h"
 #include "IConverter.h"
+using std::string;
 class IShapes{
 public :
     virtual double perimeter() = 0;

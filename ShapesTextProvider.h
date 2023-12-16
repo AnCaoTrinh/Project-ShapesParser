@@ -1,29 +1,19 @@
 #pragma once
+#ifdef BUILD_TEXT_PROVIDER
+#define TEXT_PROVIDER_API __declspec(dllexport)
+#else
+#define TEXT_PROVIDER_API __declspec(dllimport)
+#endif
 #include "main.h"
 #include "IShapes.h"
 #include "ParserFactory.h"
 #include "Utils.h"
-class ShapesTextProvider{
+class ShapesTextProvider
+{
 public:
-    static pair<vector<shared_ptr<IShapes>>, int> next(string filename);
+    virtual ~ShapesTextProvider() = default;
+    virtual pair<vector<shared_ptr<IShapes>>, int> next(string filename) = 0;
 };
 
-pair<vector<shared_ptr<IShapes>>, int> ShapesTextProvider::next(string filename){
-    ifstream input(filename);
-    vector<shared_ptr<IShapes>> shapes;
-    string size;
-    int n;
-    getline(input, size); // read n
-    n = stoi(size);
-    string line;
-    while(getline(input, line)){
-        vector<string> tokens = Utils::String::split(line, ": ");
-        auto parser = ParserFactory::instance()->create(tokens[0]); 
-        auto shape = parser->parse(tokens[1]);
-        if(shape){
-            shapes.push_back(shape);
-        }
-    }
-    input.close();
-    return {shapes, n};
-}
+extern "C" TEXT_PROVIDER_API shared_ptr<ShapesTextProvider> createTextProvier();
+typedef shared_ptr<ShapesTextProvider> (*CREATE)();
