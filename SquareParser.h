@@ -6,7 +6,7 @@
 #include "Utils.h"
 class SquareParser:public IParsable{
 public :
-    virtual shared_ptr<IShapes> parse(string);
+    shared_ptr<IShapes> parse(string);
     string parsedObjectName();
 };
 

@@ -6,6 +6,8 @@ class ShapeToRowConverter:public IValueConverter{
 private:
     vector<int> _widths;
 public :
+    /// @brief constructor ShpaeToRowConverter
+    /// @param widths of shape 
     ShapeToRowConverter(vector<int>);
     string convert(shared_ptr<IShapes>);
 };

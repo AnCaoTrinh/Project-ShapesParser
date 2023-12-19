@@ -1,5 +1,6 @@
 #pragma once 
 #include "main.h"
+/// @brief helper class to split string
 namespace Utils
 {
     class String
