@@ -28,6 +28,17 @@ string TextConverter::convertCircle(shared_ptr<IShapes> shape)
     return result.str();
 }
 
+string TextConverter::convertTriangle(shared_ptr<IShapes> shape)
+{
+    stringstream result;
+    auto cur = dynamic_pointer_cast<Triangle>(shape);
+    result << cur->name() << ": "
+           << "Side1 =" << cur->a() << ", "
+           << "Side2 =" << cur->b() << ", "
+           << "Side3 =" << cur->c();
+    return result.str();
+}
+
 TextConverter::TextConverter()
 {
     // do nothing

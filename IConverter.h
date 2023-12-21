@@ -16,6 +16,10 @@ public:
 	/// @param shape 
 	/// @return information of circle
 	virtual std::string convertCircle(shared_ptr<IShapes> shape) = 0;
+	/// @brief use design pattern visitor to convert shape
+	/// @param shape 
+	/// @return information of triangle
+	virtual std::string convertTriangle(shared_ptr<IShapes> shape) = 0;
 	/// @brief destructor IConverter
 	virtual ~IConverter();
 };

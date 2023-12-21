@@ -4,6 +4,7 @@
 #include "RectangleParser.h"
 #include "SquareParser.h"
 #include "CircleParser.h"
+#include "TriangleParser.h"
 using std::string, std::shared_ptr, std::make_shared;
 class ParserFactory{
 private:
@@ -14,6 +15,7 @@ private:
     ParserFactory(){
         vector<shared_ptr<IParsable>> iteams = {make_shared<RectangleParser>()
         , make_shared<CircleParser>(), make_shared<SquareParser>()
+        , make_shared<TriangleParser>()
         };
 
         for (int i = 0; i < iteams.size(); i++){

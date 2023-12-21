@@ -24,12 +24,13 @@ class IShapes;
 class Rectangle;
 class Circle;
 class Square;
+class Triangle;
 
 class IParsable;
 class CircleParser;
 class SquareParser;
 class RectangleParser;
-
+class TriangleParser;
 
 class ShapesTextProvider;
 
