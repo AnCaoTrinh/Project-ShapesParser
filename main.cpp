@@ -27,10 +27,8 @@
 #include "ShapeToRowConverter.h"
 
 #include <windows.h>
-// #include <gtest/gtest.h>
 int main()
 {
-
     const char dll_file_path[] = "ShapesTextProvider.dll";
     HINSTANCE hDll = LoadLibrary(dll_file_path);
     if (!hDll)
