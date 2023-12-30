@@ -56,5 +56,6 @@ int main()
     Table table(widths[0], shapes, converter2);
 
     table.display();
+    FreeLibrary(hDll);
     return 0;
 }

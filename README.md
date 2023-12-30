@@ -39,7 +39,7 @@ const char dll_file_path[] = "ShapesTextProvider.dll";
 ```c++
 typedef shared_ptr<ShapesTextProvider> (*CREATE)();
 ```
-------------------------
+--------------------------------------------------------
 ## Cách chạy chương trình 
 1. Bật cmd lên
 2. cd đến Folder chứa những file cần chạy
